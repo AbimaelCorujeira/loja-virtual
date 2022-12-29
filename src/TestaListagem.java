@@ -6,8 +6,8 @@ public class TestaListagem {
         ConnectionFactory connectionFactory = new ConnectionFactory();
         Connection connection = connectionFactory.criaConexao();
 
-        Statement statement = connection.createStatement();
-        statement.execute("SELECT ID, NOME, DESCRICAO FROM PRODUTO");
+        PreparedStatement statement = connection.prepareStatement("SELECT ID, NOME, DESCRICAO FROM PRODUTO");
+        statement.execute();
 
         ResultSet resultado = statement.getResultSet();
 

@@ -3,8 +3,8 @@ import java.sql.*;
 public class TestaInsercaoComParametro {
     public static void main(String[] args) throws SQLException {
 
-        String nome = "Mouse";
-        String descricao = "Mouse sem fio";
+        String nome = "Geladeira";
+        String descricao = "Geladeira preta";
         ConnectionFactory connectionFactory = new ConnectionFactory();
         Connection connection = connectionFactory.criaConexao();
 
