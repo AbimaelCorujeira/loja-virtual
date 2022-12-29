@@ -3,15 +3,24 @@ import java.sql.*;
 public class TestaInsercaoComParametro {
     public static void main(String[] args) throws SQLException {
 
-        String nome = "Geladeira";
-        String descricao = "Geladeira preta";
         ConnectionFactory connectionFactory = new ConnectionFactory();
         Connection connection = connectionFactory.criaConexao();
 
         PreparedStatement stm = connection.prepareStatement("INSERT INTO PRODUTO (nome, descricao)"
                 + "VALUES (?, ?)", Statement.RETURN_GENERATED_KEYS);
+
+        adicionarVariavel("SmartTV", "60 polegadas", stm);
+        adicionarVariavel("Toca Discos", "acionado por correia", stm);
+    }
+
+    private static void adicionarVariavel(String nome, String descricao, PreparedStatement stm) throws SQLException {
         stm.setString(1, nome);
         stm.setString(2, descricao);
+
+        if(nome.equals("Toca Discos")) {
+            throw new RuntimeException("Não foi possivel adicionar o produto");
+        }
+
         stm.execute();
 
         ResultSet resultSet = stm.getGeneratedKeys();
@@ -19,5 +28,6 @@ public class TestaInsercaoComParametro {
             Integer id = resultSet.getInt(1);
             System.out.println("O id criado foi: " + id);
         }
+        resultSet.close();
     }
 }
