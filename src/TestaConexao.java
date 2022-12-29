@@ -9,6 +9,7 @@ public class TestaConexao {
                         "loja_virtual?useTimezone=true&serverTimezone=UTC",
                 "root", "corujeira123456");
         System.out.println("Fechando conexão com o banco de dados");
+        System.out.println("teste");
         connection.close();
 
     }
