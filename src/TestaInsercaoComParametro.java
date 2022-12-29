@@ -14,12 +14,13 @@ public class TestaInsercaoComParametro {
             adicionarVariavel("Toca Discos", "acionado por correia", stm);
             connection.commit();
             stm.close();
-            connection.close();
+
         } catch (Exception ex) {
             ex.printStackTrace();
             System.out.println("ROLLBACK REALIZADO");
             connection.rollback();
         }
+        connection.close();
     }
 
     private static void adicionarVariavel(String nome, String descricao, PreparedStatement stm) throws SQLException {
