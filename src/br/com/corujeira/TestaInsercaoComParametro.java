@@ -1,3 +1,5 @@
+package br.com.corujeira;
+
 import java.sql.*;
 
 public class TestaInsercaoComParametro {
