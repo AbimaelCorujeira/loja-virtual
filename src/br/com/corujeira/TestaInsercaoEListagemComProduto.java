@@ -9,7 +9,7 @@ import java.util.List;
 public class TestaInsercaoEListagemComProduto {
     public static void main(String[] args) throws SQLException {
 
-        Produto comoda = new Produto("Cômoda", "Cômoda de quarto");
+        Produto comoda = new Produto("Nvidia RTX 4080", "Placa de vídeo para rodar tudo em 4K");
 
         try(Connection connection = new ConnectionFactory().criaConexao()) {
             ProdutoDAO produtoDAO = new ProdutoDAO(connection);
