@@ -1,6 +1,6 @@
 package br.com.corujeira.dao;
 
-import br.com.corujeira.modelo.Produto;
+import br.com.corujeira.model.Produto;
 
 import java.sql.*;
 import java.util.ArrayList;

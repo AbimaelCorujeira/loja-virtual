@@ -1,4 +1,4 @@
-package br.com.corujeira.modelo;
+package br.com.corujeira.model;
 
 public class Produto {
 

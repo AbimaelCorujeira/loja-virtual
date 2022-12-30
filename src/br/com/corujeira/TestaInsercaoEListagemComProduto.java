@@ -1,7 +1,7 @@
 package br.com.corujeira;
 
 import br.com.corujeira.dao.ProdutoDAO;
-import br.com.corujeira.modelo.Produto;
+import br.com.corujeira.model.Produto;
 
 import java.sql.*;
 import java.util.List;
